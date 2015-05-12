@@ -737,8 +737,7 @@ function addProfile(profession, profile, base)
               newProfile.level[i] = newProfile.level[i-1];
           }
       }
-       
-      console.info('registered profile', newProfile);
+        
       professionSet.profiles.push(newProfile);
     }
 
@@ -1693,7 +1692,6 @@ function addProfile(profession, profile, base)
     };
     addProfile("Alchemy", {
         profileName : "Aqua Regia",
-
         level: {
             20:["Alchemy_Tier2_Aquaregia", "Alchemy_Tier3_Refine_Basic", "Alchemy_Tier3_Gather_Components"],
         }
@@ -2698,7 +2696,7 @@ function addProfile(profession, profile, base)
         });
         console.log('Selecting profile: ' + profiles[0].profileName);
         var list = profiles[0].level[level];
-        if (!list.length) {
+        if (list.length <= i) {
             console.log("Nothing Found");
             switchChar();
             return false;
